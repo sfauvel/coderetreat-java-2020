@@ -22,6 +22,11 @@ public class CellTest {
         assertNextState(3, Cell.Alive);
     }
 
+    @Test
+    public void cell_with_4_neighbours_should_stay_die() {
+        assertNextState(4, Cell.Dead);
+    }
+
     private void assertNextState(int aliveNeighbours, Cell expectedCell) {
         final Cell cell = Cell.Alive;
         Cell newCell = cell.evolve(aliveNeighbours);
