@@ -13,12 +13,13 @@ public enum Cell {
     Dead {
         @Override
         public Cell evolve(int aliveNeighbours) {
-            return Alive;
+            return aliveNeighbours == 3
+                    ? Alive
+                    : Dead;
         }
     };
 
     public abstract Cell evolve(int aliveNeighbours);
-
 
 
 }

@@ -34,7 +34,15 @@ public class CellTest {
         Cell newCell = cell.evolve(aliveNeighbours);
         assertEquals(Cell.Alive, newCell);
     }
-    
+
+    @Test
+    public void dead_cell_with_0_alive_neighbour_should_stay_die() {
+        int aliveNeighbours = 0;
+        final Cell cell = Cell.Dead;
+        Cell newCell = cell.evolve(aliveNeighbours);
+        assertEquals(Cell.Dead, newCell);
+    }
+
     private void assertNextState(int aliveNeighbours, Cell expectedCell) {
         final Cell cell = Cell.Alive;
         Cell newCell = cell.evolve(aliveNeighbours);
